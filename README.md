@@ -1,9 +1,9 @@
-## Awesome course re: React, JSX, Material UI, & Ant Design on Udemy called "Complete React Course for Creating Amazing UI". I highly recommend it!
+# Awesome course re: React, JSX, Material UI, & Ant Design on Udemy called "Complete React Course for Creating Amazing UI". I highly recommend it!
 
 
-# Ant Design Update: 
+## Ant Design Update: 
 
-One of the major breaking changes have been that Icon is no longer exported from antd package.
+1. One of the major breaking changes have been that Icon is no longer exported from antd package.
 
 Instead of having string based icon references like:
 
@@ -13,13 +13,12 @@ Instead of having string based icon references like:
 
 In v4:
 
-import { SmileOutlined } from '@ant-design/icons';
+import { UserAddOutlined } from '@ant-design/icons';
 
-<SmileOutlined />
+<UserAddOutlined />
 
------
 
-In v4, the icons are a default export, so do
+2. In v4, the icons are a default export, so do
 
 import Icon from '@ant-design/icons';
 
