@@ -1,6 +1,6 @@
-# Awesome course re: React, JSX, Material UI, & Ant Design on Udemy called "Complete React Course for Creating Amazing UI". I highly recommend it!
+### React, JSX, Material UI, & Ant Design
 
-
+Github Dashboard web app with React and Ant Design
 
 ## Ant Design Update: 
 
