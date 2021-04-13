@@ -1,4 +1,4 @@
-### React, JSX, Material UI, & Ant Design
+# React, JSX, Material UI, & Ant Design
 
 Github Dashboard web app with React and Ant Design
 
