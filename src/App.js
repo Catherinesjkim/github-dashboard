@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import Profile from './components/Profile';
+import Repo from './components/Repo';
+import { Switch, Route, Link} from 'react-router-dom';
 import { UserAddOutlined, BookOutlined } from '@ant-design/icons';
+import { Input } from 'antd';
+
 import 'antd/dist/antd.css';
 import './App.css';
 
 import axios from 'axios';
 
 const { Header, Content, Footer, Sider } = Layout;
+const Search = Input.Search;
 
 class App extends Component {
   state = {
@@ -103,34 +108,63 @@ class App extends Component {
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} style={{marginTop: '60px'}}>
             <Menu.Item key="1">
-              <UserAddOutlined style={{ color: '#fff' }} />
-              <span className="nav-text">Profile</span>
+              <Link to='/'>
+                <UserAddOutlined style={{ color: '#fff' }} />
+                <span className="nav-text">Profile</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <BookOutlined style={{ color: '#fff' }} />
-              <span className="nav-text">All Repositories</span>
+             <Link to='/repo'>
+                <BookOutlined style={{ color: '#fff' }} />
+                <span className="nav-text">All Repositories</span>
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
 
         <Layout style={{ marginLeft: 200, height: '100vh' }}>
-          <Header style={{ background: '#fff', padding: 0 }} />
+          <Header style={{ background: '#fff', padding: 0 }}>
+             <Search
+              style={{ 
+                width: '300px',
+                marginLeft: '20px',
+              }}
+              placeholder="Github Username"
+              onSearch={value => this.fetchData(value)}
+              enterButton
+            />
+          </Header>
           <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
             <div style={{ padding: 24, background: '#fff'}}>
-
-              <Profile
-                user_data={this.state.user_data}
-                events_data={this.state.events_data}
-                followers_data={this.state.followers_data}
-                following_data={this.state.following_data}
-              />
+              <Switch>
+                <Route 
+                  exact
+                  path='/'
+                  render={()=>
+                    <Profile
+                      user_data={this.state.user_data}
+                      events_data={this.state.events_data}
+                      followers_data={this.state.followers_data}
+                      following_data={this.state.following_data}
+                    />
+                  }
+                />
+                <Route 
+                  exact
+                  path='/repo'
+                  render={()=>
+                    <Repo
+                      repo_data={this.state.repo_data}
+                    />
+                  }
+                />
+              </Switch>
 
             </div>
           </Content>
           <Footer>
           </Footer>
         </Layout>
-
       </Layout>
     );
   }
