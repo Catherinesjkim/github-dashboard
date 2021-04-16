@@ -9,20 +9,22 @@ class Profile extends Component {
     return (
       <div>
 
-        {user_data ?
-          (
-            <div>
+        {
+          user_data ?
+          <div>
             <div className='name-container'>
               <h1>{user_data.name}</h1>
               <Avatar src={user_data.avatar_url} shape="square" size="large" UserAddOutlined="user" />
             </div>
             <p>{user_data.bio}</p>
           </div>
-        ) : (
+         : 
+
           <div style={{textAlign: 'center', padding: '50px'}}>
             <Spin />
           </div>
-        )}
+          
+        }
 
         <Row gutter={16}>
           <Col span={8}>
