@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Col, Row, List, Avatar, Spin } from 'antd';
+import { Card, Col, Row, List, Avatar, Spin, Anchor } from 'antd';
+
+const { Link } = Anchor;
 
 class Profile extends Component {
 
@@ -23,8 +25,12 @@ class Profile extends Component {
           <div style={{textAlign: 'center', padding: '50px'}}>
             <Spin />
           </div>
-          
         }
+
+        <Anchor>
+          <Link href="https://ckpy9zcaw1756547jwd2pfoeou-m7y3j0rz4-catherinesjkim.vercel.app/dcaa88fa-48dd-48c3-a6a6-d6946400a240" title="Video Chat with Me!" />
+        </Anchor>
+
 
         <Row gutter={16}>
           <Col span={8}>
@@ -84,5 +90,6 @@ class Profile extends Component {
   }
 
 }
+
 
 export default Profile;

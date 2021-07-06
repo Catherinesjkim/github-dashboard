@@ -20,6 +20,12 @@ class SideMenu extends Component {
                 <span className="nav-text">All Repositories</span>
               </Link>
             </Menu.Item>
+            <Menu.Item key="3">
+             <Link to='/video'>
+                <BookOutlined style={{ color: '#fff' }} />
+                <span className="nav-text">Video Chat</span>
+              </Link>
+            </Menu.Item>
           </Menu>
     );
   }
